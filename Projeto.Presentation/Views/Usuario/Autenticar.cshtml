@@ -1,0 +1,34 @@
+﻿@model Projeto.Presentation.Models.AutenticarModel
+@{
+    ViewData["Title"] = "Autenticar";
+    Layout = "~/Views/Templates/Layout.cshtml";
+}
+
+<h4>Autenticar Usuário</h4>
+<a href="/Home/Index">Página Inicial</a>
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+
+    <label>Email de Acesso:</label>
+    @Html.TextBoxFor(model => model.Email, new { @class = "form-control col-md-4" })
+    <br />
+
+    <label>Senha de Acesso:</label>
+    @Html.PasswordFor(model => model.Senha, new { @class = "form-control col-md-4" })
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Autenticar Usuário" />
+    <br />
+    <br />
+
+    <strong>@TempData["Mensagem"]</strong>
+}
+
+
+
+

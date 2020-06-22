@@ -1,0 +1,11 @@
+﻿@model List<Projeto.Data.Entities.Usuario>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Templates/Layout.cshtml";
+}
+
+<h4>Seja bem vindo ao sistema!</h4>
+Perfil de acesso: <strong>Pessoa Jurídica</strong>
+<hr />
+
+@await Html.PartialAsync("~/Views/PartialViews/_ConsultaDeUsuarios.cshtml", @Model)

@@ -1,0 +1,29 @@
+﻿@model List<Projeto.Data.Entities.Usuario>
+
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Data de Criação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="50"><img src="@item.Foto" width="50" class="rounded"/></td>
+                <td>@item.Nome</td>
+                <td>@item.Email</td>
+                <td>@item.DataCriacao</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">Quantidade de Usuários : @Model.Count</td>
+        </tr>
+    </tfoot>
+</table>
